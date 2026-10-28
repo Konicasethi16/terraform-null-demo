@@ -7,7 +7,9 @@ terraform {
   }
 }
 
-resource "null_resource" "test" {}
+resource "null_resource" "test" {
+    count = 2
+}
 
 output "id" {
   value = null_resource.test.id
