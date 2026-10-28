@@ -1,3 +1,4 @@
+
 terraform {
   required_providers {
     null = {
@@ -8,9 +9,9 @@ terraform {
 }
 
 resource "null_resource" "test" {
-    count = 2
+  count = 2
 }
 
 output "id" {
-  value = null_resource.test.id
+  value = null_resource.test[*].id
 }
